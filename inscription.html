@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion - Gestion Boutique</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style> /* Custom CSS */
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-header img {
+      width: 100px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    .btn-blue {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .btn-blue:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Container de la page Login -->
+  <div class="login-container">
+    <div class="login-header">
+      <img src="C:\Users\NASKA\Desktop\GESTION\default\images\logo.png" alt="Logo">
+      <h2>Connexion</h2>
+    </div>
+    <!-- Formulaire -->
+    <form>
+      <div class="mb-3">
+        <label for="username" class="form-label">Nom d'utilisateur</label>
+        <input type="text" class="form-control" id="username" placeholder="Entrez votre nom d'utilisateur" required="">
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Mot de passe</label>
+        <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe" required="">
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="remember">
+          <label class="form-check-label" for="remember">Se souvenir de moi</label>
+        </div>
+        <a href="reset-password.html" class="text-decoration-none">Mot de passe oublié ?</a>
+      </div>
+      <div class="d-grid mt-4">
+        <button type="submit" class="btn btn-blue">Se connecter</button>
+      </div>
+    </form>
+    <div class="text-center mt-3">
+      <p>Pas encore inscrit ? <a href="inscription.html" class="text-decoration-none">Créer un compte</a></p>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Gestion Boutique. Tous droits réservés.</p>
+  </footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
+
+</html>

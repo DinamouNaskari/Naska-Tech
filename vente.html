@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des Ventes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style> .navbar {
+            background: linear-gradient(to right, #00a86b, #28a745);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+        }
+
+        h2 {
+            color: #00a86b;
+        }
+
+        .btn-ajouter {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-supprimer {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GestBoutique</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="accueil.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="client.html">Client</a></li>
+          <li class="nav-item"><a class="nav-link" href="article.html">Article</a></li>
+          <li class="nav-item"><a class="nav-link active" href="vente.html">Vente</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-4">
+    <h2>Gestion des Ventes</h2>
+    <form id="venteForm" class="mb-4">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="clientVente" placeholder="Client" required="">
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="articleVente" placeholder="Article" required="">
+        </div>
+        <div class="col-md-2">
+          <input type="number" class="form-control" id="quantiteVente" placeholder="Quantité" required="">
+        </div>
+        <div class="col-md-2">
+          <input type="number" class="form-control" id="prixTotal" placeholder="Prix total (FCFA)" readonly="">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-ajouter mt-3">Ajouter Vente</button>
+    </form>
+    <table class="table table-bordered">
+      <thead class="table-success">
+        <tr>
+          <th>#</th>
+          <th>Client</th>
+          <th>Article</th>
+          <th>Quantité</th>
+          <th>Prix Total (FCFA)</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="venteTableBody"></tbody>
+    </table>
+  </div>
+  <script style="">
+    const venteTableBody = document.getElementById('venteTableBody');
+    const venteForm = document.getElementById('venteForm');
+    let ventes = [{
+      client: "Dinamou",
+      article: "Telephone",
+      quantite: 2,
+      prixTotal: 900000
+    }, {
+      client: "Khalie",
+      article: "Robe",
+      quantite: 5,
+      prixTotal: 60000
+    }];
+
+    function afficherVentes() {
+      venteTableBody.innerHTML = "";
+      ventes.forEach((vente, index) => {
+        venteTableBody.innerHTML += `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${vente.client}</td>
+                        <td>${vente.article}</td>
+                        <td>${vente.quantite}</td>
+                        <td>${vente.prixTotal}</td>
+                        <td>
+                            <button class="btn btn-supprimer btn-sm" onclick="supprimerVente(${index})">Supprimer</button>
+                        </td>
+                    </tr>`;
+      });
+    }
+
+    function supprimerVente(index) {
+      ventes.splice(index, 1);
+      afficherVentes();
+    }
+    venteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const client = document.getElementById('clientVente').value;
+      const article = document.getElementById('articleVente').value;
+      const quantite = parseInt(document.getElementById('quantiteVente').value);
+      const prixTotal = quantite * 45; // Exemple : prix fixe pour calcul
+      ventes.push({
+        client,
+        article,
+        quantite,
+        prixTotal
+      });
+      afficherVentes();
+      venteForm.reset();
+    });
+    afficherVentes();
+  </script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
+
+</html>

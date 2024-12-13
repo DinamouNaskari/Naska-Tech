@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tableau de Bord - GestBoutique</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style> body {
+      background-image: url('./images/background.jpg'); /* Chemin vers l'image de fond */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .navbar-custom {
+      background: linear-gradient(to bottom, #00cc00, #009900);
+    }
+
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav-link {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .navbar-custom .navbar-brand img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .btn-custom {
+      background-color: transparent;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      transition: all 0.3s;
+    }
+
+    .btn-custom:hover {
+      background-color: #ffffff;
+      color: #009900;
+    }
+
+    .btn-danger {
+      background-color: #ff0000;
+      color: #ffffff;
+      border: none;
+    }
+
+    .btn-danger:hover {
+      background-color: #cc0000;
+      color: #ffffff;
+    }
+
+    .main-section {
+      background: linear-gradient(to bottom, #00cc00, #009900);
+      color: white;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .card {
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .btn-dashboard {
+      background-color: #009900;
+      color: white;
+      font-weight: bold;
+    }
+
+    .btn-dashboard:hover {
+      background-color: #006600;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="./images/logo.png" alt="Logo"> <!-- Logo à gauche --> GestBoutique </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="client.html">Client</a></li>
+          <li class="nav-item"><a class="nav-link" href="article.html">Article</a></li>
+          <li class="nav-item"><a class="nav-link" href="vente.html">Vente</a></li>
+        </ul>
+        <div>
+          <!-- Bouton Mon Compte -->
+          <a href="profil.html" class="btn btn-custom me-2">Mon compte</a>
+          <!-- Bouton Déconnexion -->
+          <a href="connection.html" class="btn btn-danger">Déconnexion</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Section principale -->
+  <section class="main-section"> ACCUEIL </section>
+  <!-- Tableau de bord -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <!-- Carte Clients -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Clients</h5>
+            <p class="card-text">Nombre total de clients : <span id="totalClients">3</span></p>
+            <a href="client.html" class="btn btn-dashboard">Gérer les Clients</a>
+          </div>
+        </div>
+      </div>
+      <!-- Carte Articles -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Articles</h5>
+            <p class="card-text">Articles en stock : <span id="totalArticles">2</span></p>
+            <a href="article.html" class="btn btn-dashboard">Voir les Articles</a>
+          </div>
+        </div>
+      </div>
+      <!-- Carte Ventes -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Ventes</h5>
+            <p class="card-text">Ventes du jour : <span id="totalVentes">2</span></p>
+            <a href="vente.html" class="btn btn-dashboard">Suivre les Ventes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row g-4 mt-4">
+      <!-- Carte Statistiques -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Statistiques</h5>
+            <p class="card-text">Consultez les performances globales de votre boutique.</p>
+            <a href="stats.html" class="btn btn-dashboard">Voir les Statistiques</a>
+          </div>
+        </div>
+      </div>
+      <!-- Carte Paramètres -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body text-center">
+            <h5 class="card-title">Paramètres</h5>
+            <p class="card-text">Configurez votre système et vos préférences.</p>
+            <a href="settings.html" class="btn btn-dashboard">Accéder aux Paramètres</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+</body>
+
+</html>
